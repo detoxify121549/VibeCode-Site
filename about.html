@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VibeCode - About</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="ide.html">IDE</a>
+</nav>
+
+<div class="container">
+  <section class="fade-in-section">
+    <h1>About VibeCode</h1>
+    <p>VibeCode is a fully interactive, multi-page website designed to push CSS and JS to the max. Smooth animations, gradients, hover effects, and aesthetic flow are at its core.</p>
+  </section>
+
+  <section class="fade-in-section">
+    <h2>Vision</h2>
+    <p>Our goal is to create an immersive, smooth web experience, blending functionality with aesthetics. Every interaction, from clicks to scrolling, feels fluid and alive.</p>
+  </section>
+
+  <section class="fade-in-section">
+    <h2>Technologies</h2>
+    <ul>
+      <li>HTML5 & CSS3 (Flexbox, Grid, Animations, Gradients)</li>
+      <li>JavaScript ES6+ (Canvas, Animations, Event-driven)</li>
+      <li>Python IDE integration for live coding</li>
+      <li>Responsive design for mobile & desktop</li>
+    </ul>
+  </section>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Scroll reveal for sections
+const faders = document.querySelectorAll('.fade-in-section');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
